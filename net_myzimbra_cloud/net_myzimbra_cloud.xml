@@ -1,0 +1,5 @@
+<zimlet name="net_myzimbra_cloud" version="1.0" label="MyZimbra Cloud" description="Briefcase sync.">
+  <include>net_myzimbra_cloud.js</include>
+  <handlerObject>net_myzimbra_cloud_HandlerObject</handlerObject>
+  <includeCSS>net_myzimbra_cloud.css</includeCSS>
+</zimlet>

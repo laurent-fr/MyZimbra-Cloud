@@ -1,0 +1,3 @@
+build/*
+dist/*
+net_myzimbra_cloud/*.zip
