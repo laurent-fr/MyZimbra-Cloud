@@ -6,9 +6,9 @@ MyZimbra Cloud is a (partial) JAVA implementation of an Owncloud server, directl
 
 You can use all the Owncloud clients (Desktop and Mobile), the files will be synchronised with the Briefcase folder.
 
-** To be clear : no need for a separate Owncloud server here, Zimbra IS the Owncloud server !**
+**To be clear : no need for a separate Owncloud server here, Zimbra IS the Owncloud server !**
 
-Your credentials will be your email adress/password, and the server will be something like
+Your credentials will be your email adress/password, and the server address will be something like
 https://"webmail"/service/cloud
 
 The license of the project is AGPLv3.
@@ -137,7 +137,7 @@ zmzimletctl deploy net_myzimbra_cloud.zip
 
 Then enable net_myzimbra_cloud for the users that will use the extension.
 
-####A word about the Zimlet :
+#### A word about the Zimlet :
 
 Why do we need a Zimlet, as all the magic happens server-side ?
 
