@@ -1,0 +1,32 @@
+--- service.web.xml.in  2014-12-16 03:39:52.000000000 +0100
++++ cloud-service.web.xml.in    2017-06-27 11:28:21.597167031 +0200
+@@ -473,6 +473,17 @@
+   </servlet>
+
+   <servlet>
++    <servlet-name>CloudServlet</servlet-name>
++    <servlet-class>net.myzimbra.cloud.CloudServlet</servlet-class>
++    <async-supported>true</async-supported>
++    <init-param>
++      <param-name>allowed.ports</param-name>
++      <param-value>%%zimbraMailPort%%, %%zimbraMailSSLPort%%</param-value>
++    </init-param>
++    <load-on-startup>10</load-on-startup>
++  </servlet>
++
++  <servlet>
+     <servlet-name>CollectLDAPConfigZimbra</servlet-name>
+     <servlet-class>com.zimbra.cs.service.admin.CollectLDAPConfigZimbra</servlet-class>
+     <async-supported>true</async-supported>
+@@ -684,6 +695,11 @@
+   </servlet-mapping>
+
+   <servlet-mapping>
++    <servlet-name>CloudServlet</servlet-name>
++    <url-pattern>/cloud/*</url-pattern>
++  </servlet-mapping>
++
++  <servlet-mapping>
+     <servlet-name>ZimletResources</servlet-name>
+     <url-pattern>/zimlet/*</url-pattern>
+   </servlet-mapping>
