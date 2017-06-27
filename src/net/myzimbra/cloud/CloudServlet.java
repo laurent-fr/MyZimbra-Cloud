@@ -110,6 +110,9 @@ public class CloudServlet extends ZimbraServlet {
                 handler = new Remote();
                 handler.setAuthUser(mAuthUser);
                 handler.setPath(uri.replace(Config.URL_CLOUD_PREFIX + "/remote.php/webdav", ""));
+            } else {
+                resp.sendError(HttpServletResponse.SC_FORBIDDEN);
+                return;
             }
         } else if (uri.startsWith(Config.URL_CLOUD_PREFIX + "/ocs/v1.php")
                 || uri.startsWith(Config.URL_CLOUD_PREFIX + "/ocs/v2.php")) {
@@ -245,10 +248,14 @@ public class CloudServlet extends ZimbraServlet {
         } catch (ServiceException e) {
             ZimbraLog.extensions.error("error getting authenticated user", e);
         }
+        
+        if (mAuthUser == null) {
+            return false;
+        }
 
         // NO authentication if the zimlet Config.getInstance().checkZimlet() is defined but not present
         String check_zimlet = Config.getInstance().checkZimlet();
-        if ((mAuthUser != null) && (check_zimlet != null)) {
+        if (check_zimlet != null) {
             String[] zimlets = mAuthUser.getZimletAvailableZimlets();
             for (String zimlet : zimlets) {
                 if (zimlet.contains(check_zimlet)) {
@@ -256,6 +263,9 @@ public class CloudServlet extends ZimbraServlet {
                     return true;
                 }
             }
+            ZimbraLog.extensions.error("Login failed for user "+mAuthUser.getName()+" : zimlet "+check_zimlet+" not found.");
+        } else {
+            return true;
         }
 
         return false;
