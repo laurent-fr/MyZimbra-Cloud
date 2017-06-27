@@ -155,3 +155,5 @@ on the Owncloud client !
 zmmailboxdctl restart # impact on production !
 
 EOF
+
+echo -e "\e[33mYour Owncloud URL will be : ${zimbra_public_url}/service/cloud\e[39m\n"
