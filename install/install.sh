@@ -50,6 +50,12 @@ then
     exit -1  
 fi
 
+if [ ! -x $(which patch) ]
+then  
+    echo "Please install the 'patch' command !" 
+    exit -1  
+fi
+
 
 echo -e "\e[31mBeware ! \e[39m\n"
 cat <<EOF
