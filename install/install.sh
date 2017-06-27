@@ -139,7 +139,7 @@ Here are the steps to finish the setup :
 cp /opt/zimbra/jetty/etc/cloud-service.web.xml.in /opt/zimbra/jetty/etc/service.web.xml.in
 
 Note : a backup of the orignal file is available at 
-       $backup_service_web 
+    /opt/zimbra/jetty/etc/<datetime>-service.web.xml.in
 
 2) install net_myzimbra_cloud zimlet (zimbra user) :
 
