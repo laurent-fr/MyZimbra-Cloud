@@ -32,25 +32,25 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # check if some commands are installed
-if [ ! -x $(which wget) ]
+if [ ! $(which wget) ]
 then  
     echo "Please install the 'wget' command !" 
     exit -1
 fi
 
-if [ ! -x $(which unzip) ]
+if [ ! $(which unzip) ]
 then  
     echo "Please install the 'unzip' command !" 
     exit -1  
 fi
 
-if [ ! -x $(which zip) ]
+if [ ! $(which zip) ]
 then  
     echo "Please install the 'zip' command !" 
     exit -1  
 fi
 
-if [ ! -x $(which patch) ]
+if [ ! $(which patch) ]
 then  
     echo "Please install the 'patch' command !" 
     exit -1  
