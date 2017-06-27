@@ -19,7 +19,19 @@ A Zimbra Server v8.6.x , either NE or OSS (Only one mailstore for now).
 
 Zimbra 8.7.x should be OK for the most part (needs testing !)
 
-## Build
+## Option 1 - Quick install
+
+Clone the repository, then, as root :
+
+```
+cd install
+chmod u+x install.sh
+./install.sh
+```
+
+Follow the instructions, and go directly to the 'Run' section below.
+
+## Option 2 - Build
 
 You will need to build the .jar extension, which can be done either in CLI or within an IDE
 
@@ -43,7 +55,7 @@ Then grab the source code :
 
 ```
 cd /usr/src
-git clone "git repo"
+git clone <git repo> myzimbracloud
 chown -R zimbra.zimbra myzimbracloud
 ```
 
